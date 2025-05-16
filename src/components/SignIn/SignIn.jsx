@@ -1,7 +1,6 @@
 import { Link, useNavigate, Navigate } from "react-router"
 import { useState, useContext } from 'react'
 import {signin} from "../../services/auth"
-// import Spinner from "../Spinner/Spinner"
 import { setToken, getUserFromToken } from "../../utils/auth"
 import {UserContext} from '../../contexts/UserContext'
 
@@ -34,16 +33,16 @@ const { data } = await signin(formData)
 setToken(data.token) 
 setUser(getUserFromToken())
 // to check 1 
-navigate('/homepage')
+navigate('/movies')
     } catch (error) {
         setError(error.response.data)
     } finally {
         setIsLoading(false)
     }
 }
-if (user) {
-    return <Navigate to="/" />
-}
+// if (user) {
+//     return <Navigate to="/" />
+// }
  return (
     <section className="form-page">
       <form onSubmit={handleSubmit} className="form">
@@ -63,9 +62,8 @@ if (user) {
 
         { error.message && <p className="error-message">{error.message}</p> }
 
-        <button type="submit">
-          { isLoading ? <Spinner /> : 'Sign in'}
-        </button>
+          <button type="submit"> Signin
+        </button> 
 
         <small>Don't have an account? <Link to="/register">Register here</Link></small>
       </form>
