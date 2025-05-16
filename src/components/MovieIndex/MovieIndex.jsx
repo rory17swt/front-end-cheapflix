@@ -1,3 +1,41 @@
+import './MovieIndex.css'
+import { Link } from 'react-router'
+import useFetch from '../../hooks/useFetch'
+
+import { getAllMovies } from '../../services/movies'
+import Spinner from '../Spinner/Spinner'
+
 export default function MovieIndex (){
-    return <h1>MovieIndex</h1>
+    const { data: movies, isLoading, error } = useFetch(getAllMovies, [])
+
+    console.log( movies );
+    return (
+        <>
+          <h1 className='title'>movies</h1>
+            <section className="movie-list">
+                {error 
+                ? <p className='error-message'>{error}</p>
+                : isLoading
+                    ? <Spinner />
+                    : movies.length > 0
+                    ? movies.map(movie => (
+                        <Link key={movie._id} to={`/movies/${movie._id}`}>
+                        <article>
+                            <img src={movie.movieImage} alt='movie cover'/>
+                            <h2>{movie.title}</h2>
+                            <p>{movie.director}</p>
+                            <p>{movie.runTime}</p>
+                            <div className="tags">
+                                {movie.tags && movie.tags.map(tag => (
+                                    <li key={tag} className="tag-item">{tag}</li>
+                                ))}
+                            </div>
+                        </article>
+                        </Link>
+                    ))
+                    : <h1>No movies on our raider</h1>
+                }
+            </section>  
+        </>
+    )
 }
