@@ -98,15 +98,10 @@ export default function MovieCreate (){
             {/* Tags */}
             <div className="input-control">
                 <label htmlFor="tags">Tags </label>
-                <input
-                    type="text"
-                    name="tags"
-                    id="title"
-                    placeholder="Tags"
-                    onChange={handleInputChange}
-                    value={formData.tags}
-                    required
-                />
+                <select type="text" name="tags" id="title" onChange={handleInputChange} value={formData.tags} multiple required>
+                    <option value="Action">Action</option>
+                </select>
+                
                 {error.title && <p className="error-message">{error.description}</p>}
             </div>
 
