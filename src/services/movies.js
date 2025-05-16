@@ -13,7 +13,7 @@ export const getAllMovies = async () => {
     }
 }
 
-export const getSingleMovie = async (movieID) => {
+export const getSingleMovie = async (movieId) => {
 try {
     const response = await axios.get(`${BASE_URL}/movies/${movieId}`)
 return response 
