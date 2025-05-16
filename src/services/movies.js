@@ -33,7 +33,7 @@ headers:{
 })
 } catch (error) {
     console.log(error)
-    throw erorr 
+    throw error 
 }
 }
 
