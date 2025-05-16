@@ -23,8 +23,11 @@ export default function MovieCreate (){
     const navigate = useNavigate()
 
     // Form functions
-    async function handleInputChange(event) {
-        setFormData({ ...formData, [event.target.name]: event.target.value })        
+    async function handleInputChange({ target: { name, value, type, files } }) {
+        if (type === 'file'){
+            value = files[0]
+        }
+        setFormData({ ...formData, [name]: value})        
     }
     
     async function handleSubmit(event) {
@@ -62,7 +65,7 @@ export default function MovieCreate (){
                     value={formData.title}
                     required
                 />
-                {error.title && <p className="error-message">{error.description}</p>}
+                {error.title && <p className="error-message">{error.title}</p>}
             </div>
 
             {/* Director */}
@@ -77,7 +80,7 @@ export default function MovieCreate (){
                     value={formData.director}
                     required
                 />
-                {error.title && <p className="error-message">{error.description}</p>}
+                {error.director && <p className="error-message">{error.director}</p>}
             </div>
 
             {/* Run time */}
@@ -92,37 +95,38 @@ export default function MovieCreate (){
                     value={formData.runTime}
                     required
                 />
-                {error.title && <p className="error-message">{error.description}</p>}
+                {error.runTime && <p className="error-message">{error.runTime}</p>}
             </div>
 
             {/* Tags */}
             <div className="input-control">
                 <label htmlFor="tags">Tags </label>
-                <input
-                    type="text"
-                    name="tags"
-                    id="title"
-                    placeholder="Tags"
-                    onChange={handleInputChange}
-                    value={formData.tags}
-                    required
-                />
-                {error.title && <p className="error-message">{error.description}</p>}
+                <select name="tags" id="tags" onChange={handleInputChange} value={formData.tags} multiple required>
+                    <option value="Action">Action</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Science fiction">Science fiction</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Animation">Animation</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Crime">Crime</option>
+                    <option value="Historical">Historical</option>
+                </select>              
+                {error.tags && <p className="error-message">{error.tags}</p>}
             </div>
 
             {/* Image */}
             <div className="input-control">
-                <label htmlFor="image">Image </label>
+                <label htmlFor="movieImage">Movie Image </label>
                 <input
-                    type="text"
-                    name="image"
-                    id="image"
-                    placeholder="Image"
+                    type="file"
+                    name="movieImage"
+                    id="movieImage"
                     onChange={handleInputChange}
-                    value={formData.movieImage}
                     required
                 />
-                {error.title && <p className="error-message">{error.description}</p>}
+                {error.movieImage && <p className="error-message">{error.movieImage}</p>}
             </div>
 
             {/* Submit */}
