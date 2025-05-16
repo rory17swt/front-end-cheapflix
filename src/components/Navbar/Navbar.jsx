@@ -1,11 +1,11 @@
 import {NavLink} from "react-router"
-import './navbar.css'
+import './Navbar.css'
 
 export default function Navbar(){
   return (
     <header>
       <div className='brand-logo'>
-        <NavLink to="/"><img src=""></img></NavLink>
+        <NavLink to="/"><img src="/" alt="/"/>🎥🍿</NavLink>
       </div>
       <nav className="functions">
         <NavLink to="/movies">movies</NavLink>
@@ -13,7 +13,7 @@ export default function Navbar(){
       </nav>
       <nav className="authentication">
         <NavLink to="/register">create an account</NavLink>
-        <NavLink to="/login">login</NavLink>
+        <NavLink to="/signIn">signIn</NavLink>
       </nav>
     </header>
   )
