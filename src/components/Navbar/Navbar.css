@@ -3,4 +3,13 @@ header {
     background-color: black;
     color: white;
     flex-direction: row;
+    gap: 100px;
+}
+.funtions{
+    display: flex;
+    gap: 50px;
+}
+.authentication{
+    display: flex;
+    gap: 50px;
 }
