@@ -32,7 +32,9 @@ try {
 await register (formData)  
 navigate('/login') 
 }catch (error) {
-    setError(error.response.data)
+     const message = error.response?.data.message || "registration failed ="
+     console.error("register error:", message)
+    setError(error.response.data) || ({message:"registration failed"})
 } finally {
     setIsLoading(false)
           console.log('Submitting formData:', formData)
