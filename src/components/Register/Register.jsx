@@ -30,7 +30,7 @@ evt.preventDefault()
 setIsLoading(true)
 try {
 await register (formData)  
-navigate('/login') 
+navigate('/signin') 
 }catch (error) {
      const message = error.response?.data.message || "registration failed ="
      console.error("register error:", message)
