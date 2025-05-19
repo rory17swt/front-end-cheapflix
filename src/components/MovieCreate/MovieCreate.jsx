@@ -50,7 +50,6 @@ export default function MovieCreate() {
     async function handleSubmit(event) {
         event.preventDefault()
         const formattedFormData = { ...formData, tags: formData.tags.map(tag => tag.value)}
-        console.log(formattedFormData)
         setIsLoading(true)
         try {
             const { data } = await createMovie(formattedFormData)
