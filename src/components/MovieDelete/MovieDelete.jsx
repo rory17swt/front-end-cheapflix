@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { deleteMovie } from "../../services/movies"
-import { useNavigate, useParams} from "react-router"
+import { useNavigate, useParams } from "react-router"
+import Spinner from '../Spinner/Spinner'
 
 export default function MovieDelete() {
     // * State
@@ -27,10 +28,10 @@ export default function MovieDelete() {
     // * UI
     return (
         <>
-        {error && <p>{error}</p>}
-        <button onClick={handleDelete}>
-        {isLoading ? 'Loading...' : 'Delete'}
-        </button>
+            {error && <p>{error}</p>}
+            <button onClick={handleDelete}>
+                {isLoading ? <Spinner /> : 'Delete'}
+            </button>
         </>
     )
 }

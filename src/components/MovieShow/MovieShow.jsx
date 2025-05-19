@@ -5,8 +5,9 @@ import useFetch from '../../hooks/useFetch'
 import { UserContext } from '../../contexts/UserContext'
 import { useContext } from 'react'
 
-import MovieDelete from '../MovieDelete/MovieDelete'
-import Spinner from '../Spinner/Spinner'
+import MovieDelete from '../MovieDelete/MovieDelete.jsx'
+import Spinner from '../Spinner/Spinner.jsx'
+
 
 export default function MovieShow() {
   // * Params
@@ -23,7 +24,7 @@ export default function MovieShow() {
   const { movie, comments } = response
 }
 
- return (
+return (
   <>
     {error ? (
       <p className='error-message'>{error}</p>
