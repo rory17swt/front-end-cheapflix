@@ -8,7 +8,7 @@ import MovieCreate from './components/MovieCreate/MovieCreate'
 import MovieUpdate from './components/MovieUpdate/MovieUpdate'
 import Register from './components/Register/Register'
 import SignIn from './components/SignIn/SignIn'
-// import MovieShow from './components/MovieShow/MovieShow'
+import MovieShow from './components/MovieShow/MovieShow'
 
 import { useContext } from 'react'
 import { UserContext } from './contexts/UserContext'
@@ -22,7 +22,7 @@ return (
       <Routes>
         <Route path="/" element={<HomePage />}/>
         <Route path="/movies" element={<MovieIndex />} />
-        {/* <Route path="/movies/:movieId" element={<MovieShow />} /> */}
+        <Route path="/movies/:movieId" element={<MovieShow />} />
         <Route path="/movies/new" element={<MovieCreate />} />
         <Route path="/movies/:movieId/edit" element={<MovieUpdate />} />
         <Route path="/register" element={<Register />} />
