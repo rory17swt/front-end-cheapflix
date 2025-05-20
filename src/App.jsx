@@ -27,7 +27,8 @@ return (
         <Route path="/movies/:movieId/edit" element={<MovieUpdate />} />
         <Route path="/register" element={<Register />} />
         <Route path="/signIn" element={<SignIn />} />
-        
+        {/* <Route path="/profile" element={<Profile />} /> */}
+
         {/* { user
           ? <Route path="/" element={<Dashboard />} />
           : <Route path="/" element={<SplashPage />} />
