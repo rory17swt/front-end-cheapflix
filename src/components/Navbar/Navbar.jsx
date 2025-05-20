@@ -19,7 +19,7 @@ const handleSignOut = () => {
         <NavLink to="/"><img src="/" alt="/"/>🎥🍿</NavLink>
       </div>
       <nav className="functions">
-        <NavLink to="/movies">movies</NavLink>
+        <NavLink to="/movies">Movies</NavLink>
       </nav>
       <nav className="authentication">
     {user
