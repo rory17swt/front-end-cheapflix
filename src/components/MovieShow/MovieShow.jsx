@@ -35,9 +35,9 @@ const handleSubmit = async (e) => {
         movie: movieId,
       })
       setCommentContent('')
-      window.location.reload() // optional: refresh to see new comment
+      window.location.reload() 
     } catch (err) {
-      console.error('❌ Failed to post comment:', err)
+      console.error('Failed to post comment:', err)
     }
   }
   return (
