@@ -9,17 +9,26 @@ import Spinner from "../Spinner/Spinner.jsx"
 
 //Tags array
 const options = [
-            { value: 'horror', label: 'Horror' },
-            { value: 'comedy', label: 'Comedy' },
-            { value: 'action', label: 'Action' },
-            { value: 'adventure', label: 'Adventure' },
-            { value: 'history', label: 'History' },
-            { value: 'science fiction', label: 'Science Fiction' },
-            { value: 'romance', label: 'Romance' },
-            { value: 'drama', label: 'Drama' },
-            { value: 'fantasy', label: 'Fantasy' },
-            { value: 'crime', label: 'Crime'}
-        ]
+    { value: 'Horror', label: 'Horror' },
+    { value: 'Comedy', label: 'Comedy' },
+    { value: 'Action', label: 'Action' },
+    { value: 'Adventure', label: 'Adventure' },
+    { value: 'History', label: 'History' },
+    { value: 'Science Fiction', label: 'Science Fiction' },
+    { value: 'Romance', label: 'Romance' },
+    { value: 'Drama', label: 'Drama' },
+    { value: 'Fantasy', label: 'Fantasy' },
+    { value: 'Crime', label: 'Crime' },
+    { value: 'Mystery', label: 'Mystery' },
+    { value: 'Thriller', label: 'Thriller' },
+    { value: 'Music', label: 'Music' },
+    { value: 'Spy', label: 'Spy' },
+    { value: 'Tech', label: 'Tech' },
+    { value: 'Cyberpunk', label: 'Cyberpunk' },
+    { value: 'Noir', label: 'Noir' },
+    { value: 'Futuristic', label: 'Futuristic' },
+    { value: 'Historical Fiction', label: 'Historical Fiction' }
+]
 
 
 export default function MovieUpdate() {
