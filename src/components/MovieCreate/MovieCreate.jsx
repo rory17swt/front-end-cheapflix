@@ -4,21 +4,23 @@ import { Navigate, useNavigate } from "react-router"
 import { UserContext } from "../../contexts/UserContext.jsx"
 import Select from "react-select"
 import makeAnimated from 'react-select/animated'
+import Spinner from "../Spinner/Spinner.jsx"
+
 
 
 //Tags array
 const options = [
-            { value: 'horror', label: 'Horror' },
-            { value: 'comedy', label: 'Comedy' },
-            { value: 'action', label: 'Action' },
-            { value: 'adventure', label: 'Adventure' },
-            { value: 'history', label: 'History' },
-            { value: 'science fiction', label: 'Science Fiction' },
-            { value: 'romance', label: 'Romance' },
-            { value: 'drama', label: 'Drama' },
-            { value: 'fantasy', label: 'Fantasy' },
-            { value: 'crime', label: 'Crime'}
-        ]
+    { value: 'horror', label: 'Horror' },
+    { value: 'comedy', label: 'Comedy' },
+    { value: 'action', label: 'Action' },
+    { value: 'adventure', label: 'Adventure' },
+    { value: 'history', label: 'History' },
+    { value: 'science fiction', label: 'Science Fiction' },
+    { value: 'romance', label: 'Romance' },
+    { value: 'drama', label: 'Drama' },
+    { value: 'fantasy', label: 'Fantasy' },
+    { value: 'crime', label: 'Crime' }
+]
 
 export default function MovieCreate() {
     // Context
@@ -49,7 +51,7 @@ export default function MovieCreate() {
 
     async function handleSubmit(event) {
         event.preventDefault()
-        const formattedFormData = { ...formData, tags: formData.tags.map(tag => tag.value)}
+        const formattedFormData = { ...formData, tags: formData.tags.map(tag => tag.value) }
         setIsLoading(true)
         try {
             const { data } = await createMovie(formattedFormData)
@@ -122,7 +124,7 @@ export default function MovieCreate() {
                     <Select
                         options={options}
                         components={animatedComponents}
-                        onChange={(tags) => setFormData({ ...formData, tags: tags})}
+                        onChange={(tags) => setFormData({ ...formData, tags: tags })}
                         isMulti
                     />
                     {error.tags && <p className="error-message">{error.tags}</p>}
@@ -142,7 +144,9 @@ export default function MovieCreate() {
                 </div>
 
                 {/* Submit */}
-                <button type="submit">Post your movie</button>
+                <button type="submit">
+                    {isLoading ? <Spinner /> : 'Post your movie'}
+                </button>
             </form>
         </>
     )

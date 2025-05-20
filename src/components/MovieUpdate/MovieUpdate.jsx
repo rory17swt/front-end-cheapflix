@@ -4,6 +4,7 @@ import { updateMovie, getSingleMovie } from "../../services/movies.js"
 import { UserContext } from "../../contexts/UserContext.jsx"
 import Select from "react-select"
 import makeAnimated from 'react-select/animated'
+import Spinner from "../Spinner/Spinner.jsx"
 
 
 //Tags array
@@ -30,7 +31,7 @@ export default function MovieUpdate() {
         title: '',
         director: '',
         runTime: 0,
-        tags: [],
+        
         movieImage: ''
     })
 
@@ -51,10 +52,11 @@ export default function MovieUpdate() {
     }
 
     async function handleSubmit(event) {
-        event.preventdefault()
+        event.preventDefault()
+        const formattedFormData = { ...formData, tags: formData.tags.map(tag => tag.value)}
         setIsLoading(true)
         try {
-            await updateMovie(movieId, formData)
+            await updateMovie(movieId, formattedFormData)
             navigate(`/movies/${movieId}`)
         } catch (error) {
             setError(error.response.data)
@@ -67,8 +69,11 @@ export default function MovieUpdate() {
     useEffect(() => {
         async function getMovieData() {
             try {
-                const { data } = await getSingleMovie(movieId)
-                setFormData(data)
+                const { data: {movie} } = await getSingleMovie(movieId)
+                movie.tags = movie.tags.map(tag => {
+                    return { value: tag, label: tag}
+                })
+                setFormData(movie)
             } catch (error) {
                 console.log(error)
                 throw error
@@ -92,11 +97,9 @@ export default function MovieUpdate() {
                 <div className="input-control">
                     <label htmlFor="title">Title </label>
                     <input
-                        key={formData.title}
                         type="text"
                         name="title"
                         id="title"
-                        placeholder='Title'
                         onChange={handleInputChange}
                         value={formData.title}
                         required
@@ -107,12 +110,10 @@ export default function MovieUpdate() {
                 {/* Director */}
                 <div className="input-control">
                     <label htmlFor="director">Director </label>
-                    <input
-                        key={formData.director}
+                    <input                      
                         type="text"
                         name="director"
                         id="director"
-                        placeholder="Director"
                         onChange={handleInputChange}
                         value={formData.director}
                         required
@@ -123,12 +124,10 @@ export default function MovieUpdate() {
                 {/* Run time */}
                 <div className="input-control">
                     <label htmlFor="runTime">Run time </label>
-                    <input
-                        key={formData.runTime}
+                    <input                      
                         type="number"
                         name="runTime"
                         id="runTime"
-                        placeholder="Run time"
                         onChange={handleInputChange}
                         value={formData.runTime}
                         required
@@ -139,22 +138,24 @@ export default function MovieUpdate() {
                 {/* Tags */}
                 <div className="input-control">
                     <label htmlFor="tags">Tags </label>
-                    <Select
-                        key={formData.tags}
-                        options={options}
-                        components={animatedComponents}
-                        onChange={(tags) => setFormData({ ...formData, tags: tags })}
-                        defaultValue={formData.tags}
-                        isMulti
-                    />
+                   
+                        <Select           
+                            options={options}
+                            components={animatedComponents}
+                            onChange={(tags) => setFormData({ ...formData, tags: tags })}
+                            value={formData.tags}
+                            isMulti
+                            isLoading={!formData.tags}
+                        />
+                    
                     {error.tags && <p className="error-message">{error.tags}</p>}
                 </div>
 
                 {/* Movie Image */}
                 <div className="input-control">
                     <label htmlFor="movieImage">Movie Image </label>
-                    <input
-                        key={formData.movieImage}
+                    {/* <img src={formData.movieImage} /> */}
+                    <input                       
                         type="file"
                         name="movieImage"
                         id="movieImage"
@@ -165,7 +166,9 @@ export default function MovieUpdate() {
                 </div>
 
                 {/* Submit */}
-                <button type="submit">Update your movie</button>
+                <button type="submit">
+                    {isLoading ? <Spinner /> : 'Update your movie'}
+                </button>
             </form>
         </>
     )
