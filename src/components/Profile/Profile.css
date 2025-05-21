@@ -1,0 +1,21 @@
+.title {
+    text-align: center;
+}
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+article {
+    height: 300px;
+    width: 200px;
+    background-color: black;
+    color: white;
+}
+article img {
+    height: 50px;
+    width: 80px;
+}
