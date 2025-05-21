@@ -26,7 +26,7 @@ const handleSignOut = () => {
     ?(
       <>
       {/* signed in routes */}
-        {/* <NavLink to="/profile">Profile page</NavLink> */}
+        <NavLink to="/profile">Profile page</NavLink>
         <NavLink to="/movies/new">Post your movie</NavLink>
         <NavLink onClick={handleSignOut} to="/signIn">Sign out</NavLink>
       </>

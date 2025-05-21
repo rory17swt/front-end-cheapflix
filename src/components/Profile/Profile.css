@@ -1,21 +1,52 @@
-.title {
-    text-align: center;
+.movie-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.movie-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    padding: 1rem;
+
+.tags {
+  margin-top: 0.5em;
 }
 
-article {
-    height: 300px;
-    width: 200px;
-    background-color: black;
-    color: white;
+.tag {
+  display: inline-block;
+  background: #500;
+  color: white;
+  padding: 0.25em 0.5em;
+  margin: 0 0.25em 0.25em 0;
+  border-radius: 4px;
+  font-size: 0.8em;
 }
-article img {
-    height: 50px;
-    width: 80px;
+
+.comment-section {
+  margin-top: 1em;
+  background: #330000;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+.btn {
+  background: #660000;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  margin: 0.25em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #990000;
+}
+
+.comment-section {
+  margin-top: 1em;
+  background: #330000;
+  padding: 0.5em;
+  border-radius: 6px;
+}
+
+.comment-section p {
+  margin: 0.25em 0;
 }
