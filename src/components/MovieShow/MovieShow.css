@@ -1,38 +1,196 @@
+/* Main Container */
 .single-movie {
-    background-color: #1f1f1f;
-    margin: auto 0px;
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: 2rem auto;
+    color: white;
 }
-#movieTitle {
-    font-size: xxx-large;
-    margin: 0px 0px 30px 50px;
-    color: #ffffff;
-}
-.singleMovieImage {
-    width: 200px;
-    height: 200px;
-}
-.singleMovie{
-    display: flex;
-    color: #ffffff;
-}
-.singleMovieDetail{
 
+/* Title */
+#movieTitle {
+    background-color: rgb(145, 4, 4);
+    padding: 2rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: left;
 }
-.the-movie {
+
+.singleMovie {
     display: flex;
-    width: 100%;
-    height: 1000px;
-    text-align: center;
-    justify-content: center;
-    border: 2px solid white;
+    gap: 2rem;
+    color: #ffffff;
+    margin: 2rem;
+    align-items: stretch;
+    /* Ensures both columns are equal height */
 }
-#tags{
+
+.singleMovieImage {
+    width: 350px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.singleMovieDetail {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    background-color: #2e2e2e;
+    padding: 2rem;
+    border-radius: 10px;
+    height: 500px;
+    flex: 1;
 }
-.comments{
+
+
+.singleMovieDetail h3 {
+    font-size: 1.1rem;
+    background-color: transparent;
+    padding: 0.4rem;
+    border: 1px solid maroon;
+    border-radius: 5px;
+}
+
+/* Tags Section */
+#tags {
+    margin-top: 1rem;
+}
+
+#tags h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#tags ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+#tags li {
+    color: white;
+    font-size: 0.95rem;
+}
+
+/* Edit/Delete Buttons */
+.controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.edit-movie,
+.controls button {
+    padding: 0.5rem 1rem;
+    background-color: #0047ab;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.controls button:last-child {
+    background-color: crimson;
+}
+
+/* Comments Section */
+.comments {
+    background-color: #fff;
     color: #212121;
-    background-color: #ffffff;
-    border: 1px solid black;
-    font-size: x-large;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 800px;
+    border: 2px solid black;
+}
+
+.comments h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* Individual Comment */
+.comments ul {
+    list-style: none;
+    padding: 0;
+}
+
+.comments li {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    position: relative;
+}
+
+.comments p {
+    margin-bottom: 0.5rem;
+}
+
+.comments small {
+    font-style: italic;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.comments button {
+    margin-right: 0.5rem;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.comments button:nth-child(1) {
+    background-color: #0047ab;
+    color: white;
+}
+
+.comments button:nth-child(2) {
+    background-color: crimson;
+    color: white;
+}
+
+/* Add/Edit Comment Form */
+.comment-form,
+.edit-comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment-form textarea,
+.edit-comment-form textarea {
+    padding: 0.75rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.comment-form button,
+.edit-comment-form button {
+    padding: 0.5rem 1rem;
+    background-color: rgb(58, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.comment-form label {
+    font-weight: bold;
 }

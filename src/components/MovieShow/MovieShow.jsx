@@ -66,10 +66,12 @@ export default function MovieShow() {
       ) : (
         <>
           <section className="single-movie">
-            <h1 id='movieTitle'>{movie.title}</h1>
             <div className='singleMovie'>
               <img className="singleMovieImage" src={movie.movieImage} alt='movie image' />
               <div className='singleMovieDetail'>
+                <h2 id='movieTitle'>{movie.title}</h2>
+                <h3>Director: {movie.director}</h3>
+                <h3>Runtime: {Math.floor(movie.runTime / 60)}h {movie.runTime % 60}minutes</h3>
                 <div id="tags">
                   <h2>Tags:</h2>
                   <ul>
@@ -78,13 +80,9 @@ export default function MovieShow() {
                     ))}
                   </ul>
                 </div>
-                <h3>director: {movie.director}</h3>
-                <h3>runtime: {Math.floor(movie.runTime / 60)}h {movie.runTime % 60}minutes</h3>
               </div>
             </div>
-            <div className='the-movie'>
-              <video className='the-movie-data'src='https://media.giphy.com/media/hbtN4wlbTyEla/giphy.mp4' controls/>
-            </div>
+
             {user && user._id === movie.owner && (
               <div className="controls">
                 <Link className='edit-movie' to={`/movies/${movieId}/edit`}>Edit</Link>
