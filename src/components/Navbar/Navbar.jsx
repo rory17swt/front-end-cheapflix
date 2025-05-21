@@ -1,19 +1,44 @@
 import {NavLink} from "react-router"
 import './Navbar.css'
+import { useContext } from "react"
+import { UserContext } from "../../contexts/UserContext"
+import { removeToken } from "../../utils/auth"
 
 export default function Navbar(){
+// context 
+const { user, setUser } = useContext(UserContext)
+
+const handleSignOut = () => {
+  removeToken()
+  setUser(null)
+}
+
   return (
     <header>
-      <nav className='brand-logo'>
-        <NavLink to="/"><img src="https://res.cloudinary.com/dmqk8mtwl/image/upload/v1747667874/Screenshot_2025-05-19_161721_qf1qop.png" alt="🎥🍿"/></NavLink>
-      </nav>
+      <div className='brand-logo'>
+        <NavLink to="/"><img src="/" alt="/"/>🎥🍿</NavLink>
+      </div>
       <nav className="functions">
-        <NavLink to="/movies" className= "nav-link">movies</NavLink>
-        <NavLink to="/movies/new" className= "nav-link">Post your movie</NavLink>
+        <NavLink to="/movies">movies</NavLink>
       </nav>
       <nav className="authentication">
-        <NavLink to="/register" className= "nav-link">create an account</NavLink>
-        <NavLink to="/signIn" className= "nav-link">signIn</NavLink>
+    {user
+    ?(
+      <>
+      {/* signed in routes */}
+        {/* <NavLink to="/profile">Profile page</NavLink> */}
+        <NavLink to="/movies/new">Post your movie</NavLink>
+        <NavLink onClick={handleSignOut} to="/signIn">Sign out</NavLink>
+      </>
+    )
+    :(
+<> 
+      {/* signed out routes */}
+        <NavLink to="/register">Create an account</NavLink>
+        <NavLink to="/signIn">SignIn</NavLink>
+</>
+    )
+    }
       </nav>
     </header>
   )
