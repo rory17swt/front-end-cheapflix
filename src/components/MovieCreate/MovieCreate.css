@@ -1,4 +1,4 @@
-.post-submit-button {
+.movie-submit-button {
   display: block;
   margin: 0 auto;
   padding: 0.5rem 1.2rem;
@@ -11,6 +11,6 @@
   font-size: 1.5rem;
 }
 
-.post-submit-button:hover {
+.movie-submit-button:hover {
   background-color: rgb(190, 60, 60);
 }
