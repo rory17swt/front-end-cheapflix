@@ -82,9 +82,9 @@ export default function MovieShow() {
                 <h3>runtime: {Math.floor(movie.runTime / 60)}h {movie.runTime % 60}minutes</h3>
               </div>
             </div>
-            <div className='the-movie'>
+            {/* <div className='the-movie'>
               <video className='the-movie-data'src='https://media.giphy.com/media/hbtN4wlbTyEla/giphy.mp4' controls/>
-            </div>
+            </div> */}
             {user && user._id === movie.owner && (
               <div className="controls">
                 <Link className='edit-movie' to={`/movies/${movieId}/edit`}>Edit</Link>
