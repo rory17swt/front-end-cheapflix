@@ -1,3 +1,4 @@
+import "./MovieUpdate.css"
 import { useContext, useEffect, useState } from "react"
 import { Navigate, useNavigate, useParams } from "react-router"
 import { updateMovie, getSingleMovie } from "../../services/movies.js"
@@ -175,7 +176,8 @@ export default function MovieUpdate() {
                 </div>
 
                 {/* Submit */}
-                <button type="submit">
+
+                <button className="SubmitButton" type="submit">
                     {isLoading ? <Spinner /> : 'Update your movie'}
                 </button>
             </form>

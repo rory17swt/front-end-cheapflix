@@ -85,8 +85,9 @@ export default function MovieShow() {
               </div>
             </div>
             <div className='the-movie'>
-              <video className='the-movie-data' src='https://media.giphy.com/media/hbtN4wlbTyEla/giphy.mp4' controls />
+              <video className='the-movie-data'src='https://media.giphy.com/media/hbtN4wlbTyEla/giphy.mp4' controls/>
             </div>
+
             {user && user._id === movie.owner && (
               <div className="controls">
                 <Link className='edit-movie' to={`/movies/${movieId}/edit`}>Edit</Link>

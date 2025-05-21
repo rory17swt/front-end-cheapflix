@@ -31,8 +31,12 @@
     flex-direction: column;
 }
 .comments{
+    display: flex;
     color: #212121;
     background-color: #ffffff;
     border: 1px solid black;
     font-size: x-large;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
 }
