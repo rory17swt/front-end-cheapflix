@@ -28,7 +28,7 @@
 }
 
 .directionButton {
-    height: 70px;
+    height: 60px;
     width: 70px;
     border-radius: 50%;
     background-color: rgb(58, 0, 0);
@@ -40,6 +40,7 @@
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s ease;
+    margin: 1rem;
 }
 
 .directionButton:hover {
