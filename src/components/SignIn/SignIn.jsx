@@ -48,6 +48,7 @@ navigate('/movies')
     <section className="form-page">
       <form onSubmit={handleSubmit} className="form">
         <h1>Welcome back!</h1>
+        <br />
 
         {/* Email */}
         <div className="input-control">

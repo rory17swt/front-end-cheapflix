@@ -5,6 +5,7 @@ import { UserContext } from "../../contexts/UserContext.jsx"
 import Select from "react-select"
 import makeAnimated from 'react-select/animated'
 import Spinner from "../Spinner/Spinner.jsx"
+import "./MovieCreate.css"
 
 
 
@@ -80,7 +81,11 @@ export default function MovieCreate() {
     return (
         <>
             <form className="form" onSubmit={handleSubmit}>
-                <h1>Post a new movie</h1>
+                <div className="page-head">
+                    <h1>Post a new movie</h1>
+                </div>
+                
+                <br />
 
                 {/* Title */}
                 <div className="input-control">
@@ -131,6 +136,7 @@ export default function MovieCreate() {
                 <div className="input-control">
                     <label htmlFor="tags">Tags </label>
                     <Select
+                        className="tags-item"
                         options={options}
                         components={animatedComponents}
                         onChange={(tags) => setFormData({ ...formData, tags: tags })}
@@ -140,6 +146,7 @@ export default function MovieCreate() {
                 </div>
 
                 {/* Image */}
+                <br />
                 <div className="input-control">
                     <label htmlFor="movieImage">Movie Image </label>
                     <input
