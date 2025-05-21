@@ -156,7 +156,7 @@ export default function MovieCreate() {
                     </div>
 
                      {/* Submit */}
-                <button className="post-submit-button" type="submit">
+                <button className="movie-submit-button" type="submit">
                     {isLoading ? <Spinner /> : 'Post your movie'}
                 </button>
                 </div>
