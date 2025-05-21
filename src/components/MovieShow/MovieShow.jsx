@@ -72,20 +72,17 @@ export default function MovieShow() {
             <div className='singleMovie'>
               <img className="singleMovieImage" src={movie.movieImage} alt='movie image' />
               <div className='singleMovieDetail'>
+                <h3>Director: {movie.director}</h3>
+                <h3>Runtime: {Math.floor(movie.runTime / 60)}h {movie.runTime % 60}minutes</h3>
                 <div id="tags">
-                  <h2>Tags:</h2>
+                  <h3>Tags:</h3>
                   <ul>
                     {movie.tags.map((tag, index) => (
                       <li key={index}>{tag}</li>
                     ))}
                   </ul>
-                </div>
-                <h3>director: {movie.director}</h3>
-                <h3>runtime: {Math.floor(movie.runTime / 60)}h {movie.runTime % 60}minutes</h3>
+                </div>              
               </div>
-            </div>
-            <div className='the-movie'>
-              <video className='the-movie-data'src='https://media.giphy.com/media/hbtN4wlbTyEla/giphy.mp4' controls/>
             </div>
 
             {user && user._id === movie.owner && (
@@ -95,6 +92,20 @@ export default function MovieShow() {
               </div>
             )}
           </section>
+
+             {user && (
+            <form onSubmit={handleSubmit} className="comment-form">
+              <label htmlFor="content" className="add-comment-title">Add a comment:</label>
+              <textarea
+                name="content"
+                id="content"
+                value={commentContent}
+                onChange={(e) => setCommentContent(e.target.value)}
+                required
+              />
+              <button type="submit">Post Comment</button>
+            </form>
+          )}
 
           <section className="comments">
             <h2>Comments</h2>
@@ -137,19 +148,7 @@ export default function MovieShow() {
             )}
           </section>
 
-          {user && (
-            <form onSubmit={handleSubmit} className="comment-form">
-              <label htmlFor="content">Add a comment:</label>
-              <textarea
-                name="content"
-                id="content"
-                value={commentContent}
-                onChange={(e) => setCommentContent(e.target.value)}
-                required
-              />
-              <button type="submit">Post Comment</button>
-            </form>
-          )}
+         
         </>
       )}
     </>

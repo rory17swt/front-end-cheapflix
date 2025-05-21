@@ -1,42 +1,226 @@
 .single-movie {
-    background-color: #1f1f1f;
-    margin: auto 0px;
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: rgb(58, 0, 0);
+  padding: 2rem;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
-#movieTitle {
-    font-size: xxx-large;
-    margin: 0px 0px 30px 50px;
-    color: #ffffff;
-}
-.singleMovieImage {
-    width: 200px;
-    height: 200px;
-}
-.singleMovie{
-    display: flex;
-    color: #ffffff;
-}
-.singleMovieDetail{
 
+#movieTitle {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-decoration: underline;
+  color: white;
+  background-color: rgb(58, 0, 0);
 }
-.the-movie {
-    display: flex;
-    width: 100%;
-    height: 1000px;
-    text-align: center;
-    justify-content: center;
-    border: 2px solid white;
+
+.singleMovie {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgb(58, 0, 0);
 }
-#tags{
-    display: flex;
-    flex-direction: column;
+
+.singleMovieImage {
+  height: 300px;
+  width: 250px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
-.comments{
-    display: flex;
-    color: #212121;
-    background-color: #ffffff;
-    border: 1px solid black;
-    font-size: x-large;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
+
+.singleMovieDetail {
+  background-color: rgb(58, 0, 0);
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#tags h2 {
+  background-color:  rgb(58, 0, 0);
+}
+
+
+#tags ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background-color: rgb(58, 0, 0);
+}
+
+#tags li {
+  list-style: none;
+  background-color: maroon;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: white;
+}
+
+.singleMovieDetail h3 {
+  font-weight: 500;
+  color: white;
+  background-color: rgb(58, 0, 0);
+}
+
+.controls {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  background-color: rgb(58, 0, 0);
+}
+
+.controls .edit-movie {
+  background-color: maroon;
+  padding: 0.5rem 1.2rem;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.controls .edit-movie:hover {
+    background-color: rgb(145, 4, 4);
+}
+
+.comments {
+  max-width: 700px;
+  margin: 3rem auto 2rem;
+  background-color: rgb(58, 0, 0);
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.comments h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  background-color: rgb(58, 0, 0);
+}
+
+.comments ul {
+  list-style: none;
+  max-height: 350px;
+  background-color: rgb(58, 0, 0);
+}
+
+.comments li {
+  padding: 1rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.comments p {
+  margin-bottom: 0.5rem;
+}
+
+.comments button {
+  background-color: rgb(58, 0, 0);
+  padding: 0.3rem 0.6rem;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-size: 0.7rem;
+}
+
+.comments button:hover {
+   background-color: rgb(145, 4, 4);
+}
+
+.edit-comment-form textarea {
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+.edit-comment-form button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.edit-comment-form button[type="submit"] {
+  background-color: maroon;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.edit-comment-form button[type="button"] {
+  background-color: rgb(145, 4, 4);
+  color: white;
+}
+
+.comment-form {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  background-color: rgb(58, 0, 0);
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+.comment-form label {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.comment-form textarea {
+  resize: vertical;
+  min-height: 80px;
+  border-radius: 15px;
+  border: none;
+  padding: 0.8rem 1rem;
+  font-family: inherit;
+}
+
+.comment-form button {
+  align-self: flex-end;
+  padding: 0.6rem 1.2rem;
+  border-radius: 15px;
+  border: none;
+  background-color: maroon;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+  background-color: rgb(145, 4, 4);
+}
+
+.error-message {
+  color: rgb(255, 179, 179);
+  text-align: center;
+  padding: 1rem;
+  background-color: rgb(145, 4, 4);
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.add-comment-title {
+    background-color: rgb(58, 0, 0);
 }
