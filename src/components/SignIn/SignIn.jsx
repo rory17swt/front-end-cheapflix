@@ -5,7 +5,7 @@ import {signin} from "../../services/auth"
 import { setToken, getUserFromToken } from "../../utils/auth"
 import {UserContext} from '../../contexts/UserContext'
 
-export default function SignIn(){
+export default function     SignIn(){
   // * Context
   const { user, setUser } = useContext(UserContext)
 

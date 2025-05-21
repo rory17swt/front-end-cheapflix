@@ -18,6 +18,8 @@ export default function MovieShow() {
     movieId
   )
   const { movie, comments } = response
+  console.log('🧪 Comments:', comments)
+
   const [commentContent, setCommentContent] = useState('')
   const [editingCommentId, setEditingCommentId] = useState(null)
   const [editingContent, setEditingContent] = useState('')
@@ -83,7 +85,7 @@ export default function MovieShow() {
               </div>
             </div>
             <div className='the-movie'>
-              <video className='the-movie-data'src='https://media.giphy.com/media/hbtN4wlbTyEla/giphy.mp4' controls/>
+              <video className='the-movie-data' src='https://media.giphy.com/media/hbtN4wlbTyEla/giphy.mp4' controls />
             </div>
             {user && user._id === movie.owner && (
               <div className="controls">
@@ -114,7 +116,9 @@ export default function MovieShow() {
                     ) : (
                       <>
                         <p>{comment.content}</p>
+                        <small>Posted on: {new Date(comment.createdAt).toLocaleString()}</small><br />
                         <small>By: {comment.author?.username}</small>
+
                         {user && comment.author?._id === user._id && (
                           <>
                             <button onClick={() => {
