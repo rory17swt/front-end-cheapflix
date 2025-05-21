@@ -11,7 +11,7 @@ export default function MovieIndex (){
     console.log( movies );
     return (
         <>
-          <h1 className='title'>movies</h1>
+          <h1 className='title'>MOVIES</h1>
             <section className="movie-list">
                 {error 
                 ? <p className='error-message'>{error}</p>
@@ -26,7 +26,7 @@ export default function MovieIndex (){
                             </div>
                             <h2>{movie.title}</h2>
                             <p>{movie.director}</p>
-                            <p>{movie.runTime}</p>
+                            <p>{movie.runTime} min</p>
                             <div className="tags">
                                 {movie.tags && movie.tags.map(tag => (
                                     <li key={tag} className="tag-item">{tag}</li>
