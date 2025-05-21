@@ -50,6 +50,7 @@ return (
     <section className="form-page">
       <form onSubmit={handleSubmit} className="form">
         <h1>Create an account</h1>
+        <br />
 
         {/* Email */}
         <div className="input-control">
