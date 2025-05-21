@@ -44,7 +44,7 @@ export default function HomePage (){
                             ? 
                                 <section className='displayMovie'>
                                     <button className='directionButton' onClick={back}>back</button>
-                                    <div className='singleDisplaymovie'>
+                                    <div className='singleDisplayMovie'>
                                         <div className='image'>
                                             <img src={movies[index].movieImage} alt='movie cover'/>
                                         </div>
@@ -52,7 +52,7 @@ export default function HomePage (){
                                         <p>{movies[index].director}</p>
                                         <p>{movies[index].runTime}</p>
                                     </div>
-                                     <div className='singleDisplaymovie'>
+                                     <div className='singleDisplayMovie'>
                                         <div className='image'>
                                             <img src={movies[index + 1].movieImage} alt='movie cover'/>
                                         </div>
@@ -60,7 +60,7 @@ export default function HomePage (){
                                         <p>{movies[index + 1].director}</p>
                                         <p>{movies[index + 1].runTime}</p>
                                     </div>
-                                     <div className='singleDisplaymovie'>
+                                     <div className='singleDisplayMovie'>
                                         <div className='image'>
                                             <img src={movies[index + 2].movieImage} alt='movie cover'/>
                                         </div>
