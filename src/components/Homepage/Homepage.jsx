@@ -32,8 +32,7 @@ export default function HomePage (){
     return(
         <>
             <div className='slogan'>
-                <h1>CheapFlix</h1>
-                <p>premium low budget entertainment from the comfort of your screen</p>
+                <img className='backgroundImage' src='https://res.cloudinary.com/dmqk8mtwl/image/upload/v1747745832/ChatGPT_Image_May_20_2025_01_20_18_PM_ufunbg_c_pad_b_gen_fill_ar_16_9_e_improve_e_sharpen_tt9gob.png'/>
             </div>
              <div className='movieDisplay'>
                 <section className="movie-list">
@@ -44,7 +43,7 @@ export default function HomePage (){
                             : movies.length > 0
                             ? 
                                 <section className='displayMovie'>
-                                    <button onClick={back}>back</button>
+                                    <button className='directionButton' onClick={back}>back</button>
                                     <div className='singleDisplaymovie'>
                                         <div className='image'>
                                             <img src={movies[index].movieImage} alt='movie cover'/>
@@ -70,7 +69,7 @@ export default function HomePage (){
                                         <p>{movies[index + 2].director}</p>
                                         <p>{movies[index + 2].runTime}</p>
                                     </div>
-                                    <button onClick={next}>next</button>
+                                    <button className='directionButton' onClick={next}>next</button>
                                     
                                 </section>
                                 
