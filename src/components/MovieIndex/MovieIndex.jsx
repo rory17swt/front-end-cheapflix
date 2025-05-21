@@ -21,7 +21,9 @@ export default function MovieIndex (){
                     ? movies.map(movie => (
                         <Link key={movie._id} to={`/movies/${movie._id}`}>
                         <article>
-                            <img src={movie.movieImage} alt='movie cover'/>
+                            <div className='image'>
+                                <img src={movie.movieImage} alt='movie cover'/>
+                            </div>
                             <h2>{movie.title}</h2>
                             <p>{movie.director}</p>
                             <p>{movie.runTime}</p>
