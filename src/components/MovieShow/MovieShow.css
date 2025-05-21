@@ -1,0 +1,38 @@
+.single-movie {
+    background-color: #1f1f1f;
+    margin: auto 0px;
+}
+#movieTitle {
+    font-size: xxx-large;
+    margin: 0px 0px 30px 50px;
+    color: #ffffff;
+}
+.singleMovieImage {
+    width: 200px;
+    height: 200px;
+}
+.singleMovie{
+    display: flex;
+    color: #ffffff;
+}
+.singleMovieDetail{
+
+}
+.the-movie {
+    display: flex;
+    width: 100%;
+    height: 1000px;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid white;
+}
+#tags{
+    display: flex;
+    flex-direction: column;
+}
+.comments{
+    color: #212121;
+    background-color: #ffffff;
+    border: 1px solid black;
+    font-size: x-large;
+}

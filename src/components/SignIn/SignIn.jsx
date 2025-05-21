@@ -1,3 +1,4 @@
+import './SignIn.css'
 import { Link, useNavigate, Navigate } from "react-router"
 import { useState, useContext } from 'react'
 import {signin} from "../../services/auth"
@@ -62,8 +63,9 @@ navigate('/movies')
 
         { error.message && <p className="error-message">{error.message}</p> }
 
-          <button type="submit"> Signin
-        </button> 
+      <br />
+        <button className="SubmitButton" type="submit"> Signin</button> 
+      <br />
 
         <small>Don't have an account? <Link to="/register">Register here</Link></small>
       </form>

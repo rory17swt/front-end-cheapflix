@@ -4,12 +4,34 @@ header {
     color: white;
     flex-direction: row;
     gap: 100px;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: x-large;
 }
-.funtions{
+img {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+}
+.functions {
     display: flex;
+    justify-content: space-between;
     gap: 50px;
 }
 .authentication{
     display: flex;
-    gap: 50px;
+    justify-content: space-around;
+    gap: 75px;
+}
+
+.nav-link {
+  color: #e6e6e6;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav :hover {
+    color: #ffe98a;
+    font-size: xx-large;
 }
