@@ -1,0 +1,15 @@
+.movie-delete button {
+  background-color: maroon;
+  padding: 0.5rem 1.2rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.movie-delete button:hover {
+  background-color: rgb(145, 4, 4);
+}
