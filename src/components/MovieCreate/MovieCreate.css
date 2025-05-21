@@ -1,55 +1,16 @@
-/* .form-page {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    color: white;
-}
-
-.page-head {
-    text-align: center;
-}
-.InputControl{
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-}
-.SubmitButton{
-  display: flex;
-  width: 100%;
-  height: 35px;
-  font-size: x-large;
-  color: white;
-  justify-content: center;
-  background-color: #dc143c;
-  border: 1px solid black;
-}
-.SubmitButton:hover{
-    background-color: #800020;
-}
-Label{
-  margin: px;
-  color: white;
-}
-Input{
-  height: 35px;
-  border-radius: 0px;
-  padding-left: .25rem;
-  width: 100%;
-  margin: 10px 0;
-  border: 1px solid rgba(255,255,255,.2);
-  background-color: rgba(0,0,0,.25);
-}
-
-Form {
-  max-width: 100%;
-  width: 500px;
+.post-submit-button {
+  display: block;
   margin: 0 auto;
+  padding: 0.5rem 1.2rem;
+  border-radius: 10px;
   color: white;
-} 
-select {
-    background-color: black;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.5rem;
 }
-.tags-items {
-    background-color: black;
-} */
+
+.post-submit-button:hover {
+  background-color: rgb(190, 60, 60);
+}
