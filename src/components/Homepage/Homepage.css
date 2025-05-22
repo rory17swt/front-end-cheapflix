@@ -1,7 +1,9 @@
 .backgroundImage {
-    width: 50%;
+    display: block;
+    max-width: 100%;
+    width: 800px;
     height: 50%;
-    margin: 10px;
+    margin: 10px auto;
 }
 
 .movieDisplay {
@@ -35,12 +37,12 @@
     color: white;
     border: none;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s ease;
-    margin: 1rem;
+    margin: 200px 1rem;
 }
 
 .directionButton:hover {

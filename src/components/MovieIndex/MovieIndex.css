@@ -29,9 +29,13 @@
     text-align: center;
 }
 
+.movie-list a {
+    text-decoration: none;
+}
+
 article {
     height: 420px;
-    width: 100%;
+    width: 300px;
     background-color: rgb(58, 0, 0);
     color: white;
     border-radius: 20px;
