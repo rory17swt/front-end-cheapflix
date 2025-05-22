@@ -102,6 +102,7 @@ export default function MovieUpdate() {
         <>
             <form className="form" onSubmit={handleSubmit}>
                 <h1>Update Your Movie</h1>
+                <br />
 
                 {/* Title */}
                 <div className="input-control">
@@ -176,7 +177,7 @@ export default function MovieUpdate() {
                 </div>
 
                 {/* Submit */}
-
+                <br />
                 <button className="SubmitButton" type="submit">
                     {isLoading ? <Spinner /> : 'Update your movie'}
                 </button>

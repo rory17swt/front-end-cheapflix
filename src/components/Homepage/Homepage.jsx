@@ -32,7 +32,7 @@ export default function HomePage (){
     return(
         <>
             <div className='slogan'>
-                <img className='backgroundImage' src='https://res.cloudinary.com/dmqk8mtwl/image/upload/v1747745832/ChatGPT_Image_May_20_2025_01_20_18_PM_ufunbg_c_pad_b_gen_fill_ar_16_9_e_improve_e_sharpen_tt9gob.png'/>
+                <img className='backgroundImage' src='https://res.cloudinary.com/dmqk8mtwl/image/upload/v1747835987/ChatGPT_Image_May_21_2025_02_50_01_PM_dr0q9g_c_pad_b_gen_fill_ar_16_9_e_improve_e_sharpen_qbhgnv.png'/>
             </div>
              <div className='movieDisplay'>
                 <section className="movie-list">
