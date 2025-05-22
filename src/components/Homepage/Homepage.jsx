@@ -36,7 +36,7 @@ export default function HomePage() {
             </div>
             <div className='movieDisplay'>
                 <button className='directionButton' onClick={back}>Back</button>
-                <section className="movie-list">
+                <section className="home-movie-list">
 
                     {[index, index + 1, index + 2].map(i => (
                         movies[i] ? (

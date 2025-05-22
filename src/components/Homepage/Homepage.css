@@ -7,15 +7,25 @@
 }
 
 .movieDisplay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
-  padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
 }
 
+.movieDisplay a {
+    text-decoration: none;
+}
+
+.home-movie-list {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+}
 
 .image img {
     height: 200px;
@@ -25,18 +35,18 @@
 }
 
 .directionButton {
-  height: 50px;
-  width: 60px;
-  border-radius: 50%;
-  background-color: rgb(58, 0, 0);
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease;
+    height: 50px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: rgb(58, 0, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
 }
 
 
