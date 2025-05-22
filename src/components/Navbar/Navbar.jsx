@@ -16,26 +16,25 @@ const handleSignOut = () => {
   return (
     <header>
       <div className='brand-logo'>
-        <NavLink to="/"><img src="/" alt="/"/>🎥🍿</NavLink>
+        <NavLink className="navlinks" id="logo-img" to="/"><img src="https://res.cloudinary.com/dmqk8mtwl/image/upload/v1747907017/Screenshot_2025-05-21_145350_o2tqp9.png" alt="logo"/></NavLink>
       </div>
-      <nav className="functions">
-        <NavLink to="/movies">movies</NavLink>
-      </nav>
+      
       <nav className="authentication">
+        <NavLink className="navlinks" to="/movies">Movies</NavLink>
     {user
     ?(
       <>
       {/* signed in routes */}
-        <NavLink to="/profile">Profile page</NavLink>
-        <NavLink to="/movies/new">Post your movie</NavLink>
-        <NavLink onClick={handleSignOut} to="/signIn">Sign out</NavLink>
+        <NavLink className="navlinks" to="/profile">Profile page</NavLink>
+        <NavLink className="navlinks" to="/movies/new">Post your movie</NavLink>
+        <NavLink className="navlinks" onClick={handleSignOut} to="/signIn">Sign out</NavLink>
       </>
     )
     :(
 <> 
       {/* signed out routes */}
-        <NavLink to="/register">Create an account</NavLink>
-        <NavLink to="/signIn">SignIn</NavLink>
+        <NavLink className="navlinks" to="/register">Create an account</NavLink>
+        <NavLink className="navlinks" to="/signIn">SignIn</NavLink>
 </>
     )
     }
