@@ -73,7 +73,7 @@ export default function MovieShow() {
               <img className="singleMovieImage" src={movie.movieImage} alt='movie image' />
               <div className='singleMovieDetail'>
                 <h3>Director: {movie.director}</h3>
-                <h3>Runtime: {Math.floor(movie.runTime / 60)}h {movie.runTime % 60}minutes</h3>
+                <h3>Runtime: {Math.floor(movie.runTime / 60)}h {movie.runTime % 60}mins</h3>
                 <div id="tags">
                   <h3>Tags:</h3>
                   <ul>
