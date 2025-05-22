@@ -16,15 +16,6 @@
   padding: 1rem;
 }
 
-.movie-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 1.5rem;
-  max-width: 1000px;
-}
-
 
 .image img {
     height: 200px;
