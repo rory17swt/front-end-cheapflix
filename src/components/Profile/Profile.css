@@ -11,7 +11,6 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color:  rgb(145, 4, 4);
 }
 
 
@@ -68,3 +67,31 @@ body {
   margin: 0.25em 0;
 }
 
+.movie-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+
+.profile-header {
+
+    width: 200px;              
+    height: 100px;             
+    margin: 2rem auto;          
+    color: white;
+    font-size: 2rem;
+    border-radius: 20px;
+    text-decoration: underline;
+    
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+}
+
+.profile-header a {
+ display: flex;
+    justify-content: flex-end;   
+
+
+}

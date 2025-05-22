@@ -46,16 +46,16 @@ export default function Profile() {
                 <p className="error-message">{error}</p>
             ) : (
                 <>
-                    <header className="profile-header">
+                    <div className="profile-header">
                         <h1>{profile?.user?.username}'s Profile</h1>
 
                         <div className="controls">
                             <Link to="/movies/new" className="create-button">Create Movie Review</Link>
                         </div>
-                    </header>
+                    </div>
 
 
-                    <div className="singleMovie">
+                    <div className="movie-grid">
                         {profile.movies.map(movie => (
                             <div key={movie._id} className="single-movie">
                                 <img className="singleMovieImage" src={movie.movieImage} alt={`Poster of ${movie.title}`} />
