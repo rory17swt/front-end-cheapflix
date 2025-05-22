@@ -1,14 +1,17 @@
+.profile-page {
+   min-height: 100vh;
+  background-color: rgb(145, 4, 4);
+}
+
+
 body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: #8B0000;
-}
-
-body {
   display: flex;
   flex-direction: column;
+  background-color:  rgb(145, 4, 4);
 }
 
 

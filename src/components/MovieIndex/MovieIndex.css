@@ -1,8 +1,7 @@
 * {
     margin: 0 ;
     padding: 0;
-    box-sizing: border-box;
-    max-height: 90vh;    
+    box-sizing: border-box; 
     background-color: rgb(145, 4, 4);
 }
 
