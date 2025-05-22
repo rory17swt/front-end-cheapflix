@@ -77,21 +77,40 @@ body {
 }
 
 .profile-header {
-
-    width: 200px;              
-    height: 100px;             
-    margin: 2rem auto;          
-    color: white;
-    font-size: 2rem;
-    border-radius: 20px;
-    text-decoration: underline;
-    
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.profile-header a {
- display: flex;
-    justify-content: flex-end;   
+.profile-header h1 {
+  color: white;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0 auto;
+  text-decoration: underline;
+  z-index: 1;
+}
 
+.profile-header .controls {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+}
 
+.create-button {
+  background-color: maroon;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.create-button:hover {
+  background-color: rgb(190, 60, 60);
 }
