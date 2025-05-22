@@ -4,7 +4,7 @@ header {
     background-color: rgb(58, 0, 0);
     flex-direction: row;
     gap: 100px;
-    height: 80px;
+    height: 86px;
     justify-content: space-between;
     align-items: center;
     font-size: x-large;
@@ -13,25 +13,31 @@ img {
     width: 80px;
     height: 80px;
     border-radius: 20px;
+    background-color: rgb(58, 0, 0);
 }
-.functions {
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
+.brand-logo{
+    background-color: rgb(58, 0, 0);
 }
 .authentication{
     display: flex;
     justify-content: space-around;
     gap: 75px;
+    background-color: rgb(58, 0, 0);
 }
 
-.nav-link {
+.navlinks {
   color: #e6e6e6;
-  text-decoration: none;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(58, 0, 0);
 }
 
 nav :hover {
-    color: #ffe98a;
     font-size: xx-large;
+    background-color: rgb(190, 60, 60);
+    border-radius: 5px;
+}
+
+#logo-img {
+    
 }
