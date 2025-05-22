@@ -8,17 +8,17 @@ import Spinner from '../Spinner/Spinner'
 
 
 
-export default function HomePage (){
+export default function HomePage() {
     const { data: movies, isLoading, error } = useFetch(getAllMovies, [])
     const [index, setIndex] = useState(0)
-    
+
     console.log(movies)
 
     const next = () => {
         if (index + 3 < movies.length) {
             setIndex(index + 3)
         }
-        if (index + 3 === movies.length){
+        if (index + 3 === movies.length) {
             setIndex(0)
         }
     }
@@ -29,56 +29,40 @@ export default function HomePage (){
         }
     }
 
-    return(
+    return (
         <>
             <div className='slogan'>
-                <img className='backgroundImage' src='https://res.cloudinary.com/dmqk8mtwl/image/upload/v1747745832/ChatGPT_Image_May_20_2025_01_20_18_PM_ufunbg_c_pad_b_gen_fill_ar_16_9_e_improve_e_sharpen_tt9gob.png'/>
+                <img className='backgroundImage' src='https://res.cloudinary.com/dmqk8mtwl/image/upload/v1747745832/ChatGPT_Image_May_20_2025_01_20_18_PM_ufunbg_c_pad_b_gen_fill_ar_16_9_e_improve_e_sharpen_tt9gob.png' />
             </div>
-             <div className='movieDisplay'>
+            <div className='movieDisplay'>
+                <button className='directionButton' onClick={back}>Back</button>
                 <section className="movie-list">
-                    {error 
-                    ? <p className='error-message'>{error}</p>
-                        : isLoading
-                            ? <Spinner />
-                            : movies.length > 0
-                            ? 
-                                <section className='displayMovie'>
-                                    <button className='directionButton' onClick={back}>back</button>
-                                    <div className='singleDisplayMovie'>
-                                        <div className='image'>
-                                            <img src={movies[index].movieImage} alt='movie cover'/>
-                                        </div>
-                                        <Link key={movies[index]._id} to={`/movies/${movies[index]._id}`}><h1>{movies[index].title}</h1></Link>
-                                        <p>{movies[index].director}</p>
-                                        <p>{movies[index].runTime}</p>
+
+                    {[index, index + 1, index + 2].map(i => (
+                        movies[i] ? (
+                            <Link key={movies[i]._id} to={`/movies/${movies[i]._id}`}>
+                                <article className='displayMovie'>
+                                    <div className='image'>
+                                        <img src={movies[i].movieImage} alt='movie cover' />
                                     </div>
-                                     <div className='singleDisplayMovie'>
-                                        <div className='image'>
-                                            <img src={movies[index + 1].movieImage} alt='movie cover'/>
-                                        </div>
-                                        <Link key={movies[index + 1]._id} to={`/movies/${movies[index + 1]._id}`}><h1>{movies[index + 1].title}</h1></Link>
-                                        <p>{movies[index + 1].director}</p>
-                                        <p>{movies[index + 1].runTime}</p>
+                                    <h2>{movies[i].title}</h2>
+                                    <p>{movies[i].director}</p>
+                                    <p>{movies[i].runTime} min</p>
+                                    <div className="tags">
+                                        {movies[i].tags && movies[i].tags.map(tag => (
+                                            <li key={tag} className="tag-item">{tag}</li>
+                                        ))}
                                     </div>
-                                     <div className='singleDisplayMovie'>
-                                        <div className='image'>
-                                            <img src={movies[index + 2].movieImage} alt='movie cover'/>
-                                        </div>
-                                        
-                                        <Link key={movies[index + 2]._id} to={`/movies/${movies[index + 2]._id}`}><h1>{movies[index + 2].title}</h1></Link>
-                                        <p>{movies[index + 2].director}</p>
-                                        <p>{movies[index + 2].runTime}</p>
-                                    </div>
-                                    <button className='directionButton' onClick={next}>next</button>
-                                    
-                                </section>
-                                
-                                    : <h1>No movies on our raider</h1>
-                                }
-                </section>  
+                                </article>
+                            </Link>
+                        ) : null
+                    ))}
+
+                </section>
+                <button className='directionButton' onClick={next}>Next</button>
+
             </div>
-            
+
         </>
     )
 }
-        

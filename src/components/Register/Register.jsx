@@ -50,9 +50,9 @@ export default function Register() {
   return (
     <section className="form-page">
       <form onSubmit={handleSubmit} className="form">
-        <h1 className="form-title">Create an account</h1>
-        <br />
         <div className="form-card">
+          <h1 className="form-title">Create an account</h1>
+        <br />
           {/* Email */}
           <div className="input-control">
             <label htmlFor="email">Email: </label>

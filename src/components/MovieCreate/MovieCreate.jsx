@@ -79,92 +79,88 @@ export default function MovieCreate() {
 
     // Form
     return (
-        <>
+        <section className="form-page">
             <form className="form" onSubmit={handleSubmit}>
-                <div className="page-head">
-                    <h1>Post a new movie</h1>
-                </div>
-                
-                <br />
+                <div className="form-card">
+                    <h1 className="form-title">Post a new movie</h1>
 
-                {/* Title */}
-                <div className="input-control">
-                    <label htmlFor="title">Title </label>
-                    <input
-                        type="text"
-                        name="title"
-                        id="title"
-                        placeholder="Title"
-                        onChange={handleInputChange}
-                        value={formData.title}
-                        required
-                    />
-                    {error.title && <p className="error-message">{error.title}</p>}
-                </div>
+                    {/* Title */}
+                    <div className="input-control">
+                        <label htmlFor="title">Title: </label>
+                        <input
+                            type="text"
+                            name="title"
+                            id="title"
+                            placeholder="Title"
+                            onChange={handleInputChange}
+                            value={formData.title}
+                            required
+                        />
+                        {error.title && <p className="error-message">{error.title}</p>}
+                    </div>
 
-                {/* Director */}
-                <div className="input-control">
-                    <label htmlFor="director">Director </label>
-                    <input
-                        type="text"
-                        name="director"
-                        id="director"
-                        placeholder="Director"
-                        onChange={handleInputChange}
-                        value={formData.director}
-                        required
-                    />
-                    {error.director && <p className="error-message">{error.director}</p>}
-                </div>
+                    {/* Director */}
+                    <div className="input-control">
+                        <label htmlFor="director">Director: </label>
+                        <input
+                            type="text"
+                            name="director"
+                            id="director"
+                            placeholder="Director"
+                            onChange={handleInputChange}
+                            value={formData.director}
+                            required
+                        />
+                        {error.director && <p className="error-message">{error.director}</p>}
+                    </div>
 
-                {/* Run time */}
-                <div className="input-control">
-                    <label htmlFor="runTime">Run time </label>
-                    <input
-                        type="number"
-                        name="runTime"
-                        id="runTime"
-                        placeholder="Run time"
-                        onChange={handleInputChange}
-                        value={formData.runTime}
-                        required
-                    />
-                    {error.runTime && <p className="error-message">{error.runTime}</p>}
-                </div>
+                    {/* Run time */}
+                    <div className="input-control">
+                        <label htmlFor="runTime">Run time: </label>
+                        <input
+                            type="number"
+                            name="runTime"
+                            id="runTime"
+                            placeholder="Run time"
+                            onChange={handleInputChange}
+                            value={formData.runTime}
+                            required
+                        />
+                        {error.runTime && <p className="error-message">{error.runTime}</p>}
+                    </div>
 
-                {/* Tags */}
-                <div className="input-control">
-                    <label htmlFor="tags">Tags </label>
-                    <Select
-                        className="tags-item"
-                        options={options}
-                        components={animatedComponents}
-                        onChange={(tags) => setFormData({ ...formData, tags: tags })}
-                        isMulti
-                    />
-                    {error.tags && <p className="error-message">{error.tags}</p>}
-                </div>
+                    {/* Tags */}
+                    <div className="input-control">
+                        <label htmlFor="tags">Tags: </label>
+                        <Select
+                            className="tags-item"
+                            options={options}
+                            components={animatedComponents}
+                            onChange={(tags) => setFormData({ ...formData, tags: tags })}
+                            isMulti
+                        />
+                        {error.tags && <p className="error-message">{error.tags}</p>}
+                    </div>
 
-                {/* Image */}
-                <br />
-                <div className="input-control">
-                    <label htmlFor="movieImage">Movie Image </label>
-                    <input
-                        type="file"
-                        name="movieImage"
-                        id="movieImage"
-                        onChange={handleInputChange}
-                        required
-                    />
-                    {error.movieImage && <p className="error-message">{error.movieImage}</p>}
-                </div>
+                    {/* Image */}
+                    <div className="input-control">
+                        <label htmlFor="movieImage">Movie Image: </label>
+                        <input
+                            type="file"
+                            name="movieImage"
+                            id="movieImage"
+                            onChange={handleInputChange}
+                            required
+                        />
+                        {error.movieImage && <p className="error-message">{error.movieImage}</p>}
+                    </div>
 
-                {/* Submit */}
-                <br />
-                <button className="SubmitButton" type="submit">
+                     {/* Submit */}
+                <button className="movie-submit-button" type="submit">
                     {isLoading ? <Spinner /> : 'Post your movie'}
                 </button>
+                </div>
             </form>
-        </>
+        </section>
     )
 }
