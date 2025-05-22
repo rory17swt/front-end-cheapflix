@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rampart+One&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 * {
     margin: 0 ;
     padding: 0;
     box-sizing: border-box;   
     background-color: rgb(145, 4, 4);
+    font-family: "Roboto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings:
+     "wdth" 100,
+     "GRAD" 0;
 }
