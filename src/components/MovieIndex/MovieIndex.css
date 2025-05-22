@@ -1,9 +1,3 @@
-* {
-    margin: 0 ;
-    padding: 0;
-    box-sizing: border-box; 
-    background-color: rgb(145, 4, 4);
-}
 
 .title {
     width: 200px;              
@@ -26,11 +20,16 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     padding: 2rem;
+    text-align: center;
+}
+
+.movie-list a {
+    text-decoration: none;
 }
 
 article {
     height: 420px;
-    width: 100%;
+    width: 300px;
     background-color: rgb(58, 0, 0);
     color: white;
     border-radius: 20px;
@@ -39,6 +38,7 @@ article {
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
+    object-fit: cover;
 }
 
 article:hover {
@@ -46,13 +46,14 @@ article:hover {
     transform: scale(1.025);
 }
 
-
 .image {
     background-color: rgb(58, 0, 0);
-    display: flex;
-    justify-content: center;  
 }
 
+.image img {
+    object-fit: contain; 
+    background-color: rgb(58, 0, 0);
+}
 
 .tags {
     display: flex;

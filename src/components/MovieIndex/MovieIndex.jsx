@@ -26,7 +26,7 @@ export default function MovieIndex (){
                             </div>
                             <h2>{movie.title}</h2>
                             <p>{movie.director}</p>
-                            <p>{movie.runTime} min</p>
+                            <p>{Math.floor(movie.runTime / 60)}h {movie.runTime % 60}mins</p>
                             <div className="tags">
                                 {movie.tags && movie.tags.map(tag => (
                                     <li key={tag} className="tag-item">{tag}</li>

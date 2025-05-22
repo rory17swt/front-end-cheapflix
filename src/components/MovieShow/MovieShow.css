@@ -110,7 +110,10 @@
 .comments ul {
   list-style: none;
   max-height: 350px;
+  overflow-y: auto;
   background-color: rgb(58, 0, 0);
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  padding-right: 0.5rem;
 }
 
 .comments li {

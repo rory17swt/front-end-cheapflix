@@ -45,7 +45,7 @@ export default function SignIn() {
   //     return <Navigate to="/" />
   // }
   return (
-    <section className="form-page">
+    <section className="signin-form-page">
       <form onSubmit={handleSubmit} className="form-card">
         <h1 className="form-title">Welcome back!</h1>
         <br />
