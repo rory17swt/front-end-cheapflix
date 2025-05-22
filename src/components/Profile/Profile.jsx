@@ -48,40 +48,54 @@ export default function Profile() {
         <>
           <header className="profile-header">
             <h1>{profile?.user?.username}'s Profile</h1>
-          </header>
 
-          <div className="profile-controls">
+          <div className="controls">
             <Link to="/movies/new" className="create-button">Create Movie Review</Link>
           </div>
+        </header>
 
-         <div className="profile-grid">
-  {profile.movies.map(movie => (
-    <div key={movie._id} className="movie-card">
-      <img src={movie.movieImage} alt={movie.title} className="movie-image" />
-      <h3>{movie.title}</h3>
-      <p>{movie.director}</p>
-      <p>{movie.runTime} min</p>
-      <div className="tags">
-        {movie.tags?.map((tag, idx) => <span key={idx} className="tag">{tag}</span>)}
-      </div>
 
-      <div className="card-actions">
-        <Link to={`/movies/${movie._id}/edit`} className="btn">Edit</Link>
-        <button className="btn">Delete</button>
-      </div>
+    <div className="singleMovie">
+            {profile.movies.map(movie => (
+              <div key={movie._id} className="single-movie">
+                <img className="singleMovieImage" src={movie.movieImage} alt={`Poster of ${movie.title}`} />
+                <div className="singleMovieDetail">
+                  <h2>{movie.title}</h2>
+                  <h3>Director: {movie.director}</h3>
+                  <h3>Runtime: {Math.floor(movie.runTime / 60)}h {movie.runTime % 60}minutes</h3>
 
-      <div className="comment-section">
-        <h4>Comments:</h4>
-        {profile.comments
-          .filter(c => c.movie._id === movie._id)
-          .map(c => (
-            <p key={c._id}><strong>{c.author?.username}:</strong> {c.content}</p>
-          ))}
-      </div>
-    </div>
-  ))}
-</div>
+                  <div id="tags">
+                    <h2>Tags:</h2>
+                    <ul>
+                      {movie.tags.map((tag, index) => (
+                        <li key={index}>{tag}</li>
+                      ))}
+                    </ul>
+                  </div>
 
+                  <div className="controls">
+                    <Link className='edit-movie' to={`/movies/${movie._id}/edit`}>Edit</Link>
+                    <button className='edit-movie'>Delete</button>
+                  </div>
+                </div>
+
+                <section className="comments">
+                  <h2>Comments:</h2>
+                  {profile.comments.filter(comment => comment.movie._id === movie._id).length === 0 ? (
+                    <p>No comments yet</p>
+                  ) : (
+                    <ul>
+                      {profile.comments.filter(comment => comment.movie._id === movie._id).map(comment => (
+                        <li key={comment._id}>
+                          <p>: {comment.content}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </section>
+              </div>
+            ))}
+          </div>
         </>
       )}
     </section>
