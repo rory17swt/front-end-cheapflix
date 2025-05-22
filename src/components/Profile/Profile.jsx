@@ -4,15 +4,19 @@ import { getUserFromToken } from '../../utils/auth'
 import Spinner from '../Spinner/Spinner'
 import './Profile.css'
 import { Link } from 'react-router'
+import { getToken } from '../../utils/auth'
+
 
 export default function Profile() {
     console.log('Profile component loaded')
+    console.log('Token being sent:', getToken()) 
 
     const [profile, setProfile] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState('')
 
     const user = getUserFromToken()
+console.log('User in context:', user)
 
     useEffect(() => {
         const getProfileData = async () => {

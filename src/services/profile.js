@@ -11,7 +11,7 @@ const response = await axios.get(`${BASE_URL}/profile/${profileId}`, {
       }
     })
 return response.data
-} catch (erorr) {
+} catch (error) {
     console.error('failed to retrieve profile',error)
     throw error
 
